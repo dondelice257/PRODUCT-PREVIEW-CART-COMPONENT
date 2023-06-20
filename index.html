@@ -2,35 +2,169 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script defer src="https://use.fontawesome.com/releases/v5.15.3/js/all.js"></script>
   <title>Frontend Mentor | Product preview card component</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
     .attribution { font-size: 11px; text-align: center; }
     .attribution a { color: hsl(228, 45%, 44%); }
+
+    *{
+      margin: 0;
+      padding: 0%;
+    }
+    :root {
+      --dark-cyan: hsl(158, 36%, 37%);
+      --cream: hsl(30, 38%, 92%);
+      --very-dark-blue: hsl(212, 21%, 14%);
+      --dark-grayish-blue: hsl(228, 12%, 48%);
+      --white: hsl(0, 0%, 100%);
+      --font-size-paragraph: 18px;
+      --fraunces: 'Fraunces', sans-serif;
+      --montserrat: 'Montserrat', sans-serif;
+      --md-font-weight: 500;
+      --lg-font-weight: 700;
+      --title-font-size:50px;
+      --lg-space:5px;
+      --md-font-size:25px
+    }
+    .container {
+      width: 100%;
+    }
+   
+    body {
+      background-color: var(--cream);
+    }
+    .words-container{
+      display: flex;
+    }
+    .words {
+      background-color: var(--white);
+      padding: 20px;
+
+
+      
+    }
+    .title h1{
+      font-family: var(--fraunces);
+      font-weight: var(--lg-font-weight);
+      margin-bottom: 20px;
+
+    }
+    .button{
+      width: 100%;
+      margin-top: 10px;
+      display: flex;
+      justify-content: center;
+    }
+    .button button{
+      width: 80%;
+      font-size: 25px;
+      border: none;
+      background-color: var(--dark-cyan);
+      color: var(--cream);
+      border-radius: 10px;
+      padding: 5px;
+    }
+    .preview h5{
+      font-family: var(--montserrat);
+      font-weight: var(--md-font-weight);
+      letter-spacing: var(--lg-space);
+      font-size: var(--md-font-size);
+      color: var(--dark-grayish-blue);
+
+    }
+    .description {
+      font-size: var(--font-size-paragraph);
+    }
+    .preview {
+      font-family: var(--montserrat);
+      display: flex;
+      justify-content: start;
+      margin-bottom: 10px;
+    }
+    .price{
+      display: flex;
+      align-items: center;
+
+    }
+    .price h2{
+      color: var(--dark-cyan);
+      margin-right: 5px;
+
+    }
+    .price span{
+      font-size: 19px;
+      text-decoration: line-through;
+    }
+    @media (max-width:375px) {
+      .img-desk{
+        width: 100%;
+        height: 300px;
+      }
+    }
+    @media (min-width:376px) {
+      .container {
+        display: flex;
+        height: 100vh;
+        align-items: center;
+        width: 40%;
+      }
+   
+      .img-desk {
+        height: 500px;
+        width: 70%;
+      border-radius: 15px 0px 0px 15px; 
+
+      }
+      .words {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+      border-radius: 0px 15px 15px 0px; 
+      height: 100%;
+
+      }
+      .words-container{
+        height: 500px;
+
+        width: 500px;
+      }
+    }
   </style>
 </head>
 <body>
-
-  Preview
-
-  Gabrielle Essence Eau De Parfum
-
-  A floral, solar and voluptuous interpretation composed by Olivier Polge, 
-  Perfumer-Creator for the House of CHANEL.
-
-  $149.99
-  $169.99
-
-  Add to Cart
-  
+  <div class="container">
+  <img src="./images/image-product-desktop.jpg" alt="product" title="desktop design" class="img-desk">
+   <div class="words-container">
+    <div class="words">
+      <div class="preview">
+        <h5>Perfume</h5>
+      </div>
+      <div class="title">
+        <h1>Gabrielle Essence Eau De Parfum</h1>
+      </div>
+      <div class="description">
+        <p>A floral, solar and voluptuous interpretation composed by Olivier Polge, Perfumer-Creator for the House of CHANEL.</p>
+      </div>
+      <div class="price">
+        <h2>$149.99</h2>
+        <span>$169.99</span>
+      </div>
+      <div class="button">
+        <button class="add">
+          <i class="fa-solid fa-facebook"></i>
+          <b>Add to cart</b>
+        </button>
+      </div>
+    </div>
+   </div>
+  </div>
   <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="https://github.com/dondelice257">Don Delice Dushime</a>.
   </div>
 </body>
 </html>
